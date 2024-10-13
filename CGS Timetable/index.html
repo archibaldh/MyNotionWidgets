@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CGS Timetable</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        img {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <img src="" id="image"/>
+    </div>
+    <script>
+        let img = document.getElementById("image");
+        let imageshown;
+
+        var d = new Date();
+        var date = d.getDate();
+        var day = d.getDay();
+
+        var weekOfMonth = Math.ceil((date - 1 - day) / 7);
+
+        if (weekOfMonth % 2 == false) { //Week 1
+            switch (day){
+                case(1):
+                    imageshown = "MonW1D1.png";
+                    break;
+                case (2):
+                    imageshown = "TueW1D2.png"
+                    break;
+                case (3):
+                    imageshown = "WedW1D3.png"
+                    break;
+                case (4):
+                    imageshown = "ThuW1D4.png"
+                    break;
+                case (5):
+                    imageshown = "FriW1D5.png"
+                    break;
+            }
+        }
+        else{ //Week 2
+            switch (day){
+                case(1):
+                    imageshown = "MonW2D1.png";
+                    break;
+                case (2):
+                    imageshown = "TueW2D2.png"
+                    break;
+                case (3):
+                    imageshown = "WedW2D3.png"
+                    break;
+                case (4):
+                    imageshown = "ThuW2D4.png"
+                    break;
+                case (5):
+                    imageshown = "FriW2D5.png"
+                    break;
+            }
+        }
+        img.src = imageshown;
+
+    </script>
+</body>
+</html>
