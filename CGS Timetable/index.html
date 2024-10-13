@@ -9,16 +9,19 @@
         }
         img {
             width: 100vw;
-            height: 100vh;
         }
     </style>
 </head>
 <body>
     <div class="container">
-            <img src="" id="image"/>
+        <button onclick="prevDay()")><</button>
+        <button onclick="nextDay()")>></button>
+        <span id="Day"></span>
+        <img src="" id="image"/>
     </div>
     <script>
         let img = document.getElementById("image");
+        let span = document.getElementById("Day");
         let imageshown;
 
         var d = new Date();
@@ -30,19 +33,24 @@
         if (weekOfMonth % 2 == false) { //Week 1
             switch (day){
                 case(1):
-                    imageshown = "MonW1D1.png";
+                    imageshown = "MonW1D1.png"
+                    span.innerText = "Monday Week 1"
                     break;
                 case (2):
                     imageshown = "TueW1D2.png"
+                    span.innerText = "Tuesday Week 1"
                     break;
                 case (3):
                     imageshown = "WedW1D3.png"
+                    span.innerText = "Wednesday Week 1"
                     break;
                 case (4):
                     imageshown = "ThuW1D4.png"
+                    span.innerText = "Thursday Week 1"
                     break;
                 case (5):
                     imageshown = "FriW1D5.png"
+                    span.innerText = "Friday Week 1"
                     break;
             }
         }
@@ -50,23 +58,236 @@
             switch (day){
                 case(1):
                     imageshown = "MonW2D1.png";
+                    span.innerText = "Monday Week 2"
                     break;
                 case (2):
                     imageshown = "TueW2D2.png"
+                    span.innerText = "Tuesday Week 2"
                     break;
                 case (3):
                     imageshown = "WedW2D3.png"
+                    span.innerText = "Wednesday Week 2"
                     break;
                 case (4):
                     imageshown = "ThuW2D4.png"
+                    span.innerText = "Thursday Week 2"
                     break;
                 case (5):
                     imageshown = "FriW2D5.png"
+                    span.innerText = "Friday Week 2"
                     break;
             }
         }
         img.src = imageshown;
 
+        function prevDay() {
+            if (day !== 1) {
+                day = day - 1;
+                if (weekOfMonth % 2 == false) { //Week 1
+                    switch (day) {
+                        case(1):
+                            imageshown = "MonW1D1.png";
+                            span.innerText = "Monday Week 1"
+                            break;
+                        case (2):
+                            imageshown = "TueW1D2.png"
+                            span.innerText = "Tuesday Week 1"
+                            break;
+                        case (3):
+                            imageshown = "WedW1D3.png"
+                            span.innerText = "Wednesday Week 1"
+                            break;
+                        case (4):
+                            imageshown = "ThuW1D4.png"
+                            span.innerText = "Thursday Week 1"
+                            break;
+                        case (5):
+                            imageshown = "FriW1D5.png"
+                            span.innerText = "Friday Week 1"
+                            break;
+                    }
+                } else { //Week 2
+                    switch (day) {
+                        case(1):
+                            imageshown = "MonW2D1.png";
+                            span.innerText = "Monday Week 2"
+                            break;
+                        case (2):
+                            imageshown = "TueW2D2.png"
+                            span.innerText = "Tuesday Week 2"
+                            break;
+                        case (3):
+                            imageshown = "WedW2D3.png"
+                            span.innerText = "Wednesday Week 2"
+                            break;
+                        case (4):
+                            imageshown = "ThuW2D4.png"
+                            span.innerText = "Thursday Week 2"
+                            break;
+                        case (5):
+                            imageshown = "FriW2D5.png"
+                            span.innerText = "Friday Week 2"
+                            break;
+                    }
+                }
+                img.src = imageshown;
+            } else {
+                day = 5
+                weekOfMonth += 1;
+                if (weekOfMonth % 2 == false) { //Week 1
+                    switch (day) {
+                        case(1):
+                            imageshown = "MonW1D1.png";
+                            span.innerText = "Monday Week 1"
+                            break;
+                        case (2):
+                            imageshown = "TueW1D2.png"
+                            span.innerText = "Tuesday Week 1"
+                            break;
+                        case (3):
+                            imageshown = "WedW1D3.png"
+                            span.innerText = "Wednesday Week 1"
+                            break;
+                        case (4):
+                            imageshown = "ThuW1D4.png"
+                            span.innerText = "Thursday Week 1"
+                            break;
+                        case (5):
+                            imageshown = "FriW1D5.png"
+                            span.innerText = "Friday Week 1"
+                            break;
+                    }
+                } else { //Week 2
+                    switch (day) {
+                        case(1):
+                            imageshown = "MonW2D1.png";
+                            span.innerText = "Monday Week 2"
+                            break;
+                        case (2):
+                            imageshown = "TueW2D2.png"
+                            span.innerText = "Tuesday Week 2"
+                            break;
+                        case (3):
+                            imageshown = "WedW2D3.png"
+                            span.innerText = "Wednesday Week 2"
+                            break;
+                        case (4):
+                            imageshown = "ThuW2D4.png"
+                            span.innerText = "Thursday Week 2"
+                            break;
+                        case (5):
+                            imageshown = "FriW2D5.png"
+                            span.innerText = "Friday Week 2"
+                            break;
+                    }
+                }
+                img.src = imageshown;
+            }
+        }
+        function nextDay() {
+            if (day !== 5) {
+                day = day + 1;
+                if (weekOfMonth % 2 == false) { //Week 1
+                    switch (day) {
+                        case(1):
+                            imageshown = "MonW1D1.png";
+                            span.innerText = "Monday Week 1"
+                            break;
+                        case (2):
+                            imageshown = "TueW1D2.png"
+                            span.innerText = "Tuesday Week 1"
+                            break;
+                        case (3):
+                            imageshown = "WedW1D3.png"
+                            span.innerText = "Wednesday Week 1"
+                            break;
+                        case (4):
+                            imageshown = "ThuW1D4.png"
+                            span.innerText = "Thursday Week 1"
+                            break;
+                        case (5):
+                            imageshown = "FriW1D5.png"
+                            span.innerText = "Friday Week 1"
+                            break;
+                    }
+                } else { //Week 2
+                    switch (day) {
+                        case(1):
+                            imageshown = "MonW2D1.png";
+                            span.innerText = "Monday Week 2"
+                            break;
+                        case (2):
+                            imageshown = "TueW2D2.png"
+                            span.innerText = "Tuesday Week 2"
+                            break;
+                        case (3):
+                            imageshown = "WedW2D3.png"
+                            span.innerText = "Wednesday Week 2"
+                            break;
+                        case (4):
+                            imageshown = "ThuW2D4.png"
+                            span.innerText = "Thursday Week 2"
+                            break;
+                        case (5):
+                            imageshown = "FriW2D5.png"
+                            span.innerText = "Friday Week 2"
+                            break;
+                    }
+                }
+                img.src = imageshown;
+            } else {
+                day = 1
+                weekOfMonth += 1;
+                if (weekOfMonth % 2 == false) { //Week 1
+                    switch (day) {
+                        case(1):
+                            imageshown = "MonW1D1.png";
+                            span.innerText = "Monday Week 1"
+                            break;
+                        case (2):
+                            imageshown = "TueW1D2.png"
+                            span.innerText = "Tuesday Week 1"
+                            break;
+                        case (3):
+                            imageshown = "WedW1D3.png"
+                            span.innerText = "Wednesday Week 1"
+                            break;
+                        case (4):
+                            imageshown = "ThuW1D4.png"
+                            span.innerText = "Thursday Week 1"
+                            break;
+                        case (5):
+                            imageshown = "FriW1D5.png"
+                            span.innerText = "Friday Week 1"
+                            break;
+                    }
+                } else { //Week 2
+                    switch (day) {
+                        case(1):
+                            imageshown = "MonW2D1.png";
+                            span.innerText = "Monday Week 2"
+                            break;
+                        case (2):
+                            imageshown = "TueW2D2.png"
+                            span.innerText = "Tuesday Week 2"
+                            break;
+                        case (3):
+                            imageshown = "WedW2D3.png"
+                            span.innerText = "Wednesday Week 2"
+                            break;
+                        case (4):
+                            imageshown = "ThuW2D4.png"
+                            span.innerText = "Thursday Week 2"
+                            break;
+                        case (5):
+                            imageshown = "FriW2D5.png"
+                            span.innerText = "Friday Week 2"
+                            break;
+                    }
+                }
+                img.src = imageshown;
+            }
+        }
     </script>
 </body>
 </html>
